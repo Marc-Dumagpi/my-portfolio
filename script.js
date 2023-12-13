@@ -25,7 +25,6 @@
         function readFormData() {
             var formData = {};
             formData["fullName"] = document.getElementById("fullName").value;
-            formData["position"] = document.getElementById("position").value;
             formData["weekWork"] = document.getElementById("weekWork").value;
             formData["dayWork"] = document.getElementById("dayWork").value;
             formData["hourWork"] = document.getElementById("hourWork").value;
@@ -48,21 +47,19 @@
         function onEdit(td) {
             selectedRow = td.parentElement.parentElement;
             document.getElementById("fullName").value = selectedRow.cells[0].innerHTML;
-            document.getElementById("position").value = selectedRow.cells[1].innerHTML;
-            document.getElementById("weekWork").value = selectedRow.cells[2].innerHTML;
-            document.getElementById("dayWork").value = selectedRow.cells[3].innerHTML;
-            document.getElementById("hourWork").value = selectedRow.cells[4].innerHTML;
-            document.getElementById("perHour").value = selectedRow.cells[5].innerHTML;
+            document.getElementById("weekWork").value = selectedRow.cells[1].innerHTML;
+            document.getElementById("dayWork").value = selectedRow.cells[2].innerHTML;
+            document.getElementById("hourWork").value = selectedRow.cells[3].innerHTML;
+            document.getElementById("perHour").value = selectedRow.cells[4].innerHTML;
         }
 
         function updateRecord(formData) {
             selectedRow.cells[0].innerHTML = formData.fullName;
-            selectedRow.cells[1].innerHTML = formData.position;
-            selectedRow.cells[2].innerHTML = formData.weekWork;
-            selectedRow.cells[3].innerHTML = formData.dayWork;
-            selectedRow.cells[4].innerHTML = formData.hourWork;
-            selectedRow.cells[5].innerHTML = formData.perHour;
-            selectedRow.cells[6].innerHTML = formData.grossIncome;
+            selectedRow.cells[1].innerHTML = formData.weekWork;
+            selectedRow.cells[2].innerHTML = formData.dayWork;
+            selectedRow.cells[3].innerHTML = formData.hourWork;
+            selectedRow.cells[4].innerHTML = formData.perHour;
+            selectedRow.cells[5].innerHTML = formData.grossIncome;
         }
 
         function onDelete(td) {
@@ -76,7 +73,6 @@
         function resetForm() {
             selectedRow = null;
             document.getElementById("fullName").value = '';
-            document.getElementById("position").value = '';
             document.getElementById("weekWork").value = '';
             document.getElementById("dayWork").value = '';
             document.getElementById("hourWork").value = '';
